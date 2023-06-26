@@ -14,10 +14,10 @@ try {
     summary: "A charming loft in Paris",
     bedrooms: 1,
     bathrooms: 1
-  }
+  });
     if (callback) callback(newListing);
 
-);
+//);
 } catch (e){
   console.error(e);
 } finally {
