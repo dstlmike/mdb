@@ -5,7 +5,7 @@ async function main (){
   var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
 var client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 try {
-  await client.connect(callback);
+  await client.connect();
   //await listDatabases(client);
   await createListing(
     client,
@@ -15,7 +15,7 @@ try {
     bedrooms: 1,
     bathrooms: 1
   });
-    if (callback) console.log(newListing);
+   // if (callback) console.log(newListing);
 
 //);
 } catch (e){
