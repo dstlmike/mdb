@@ -15,7 +15,7 @@ try {
     bedrooms: 1,
     bathrooms: 1
   });
-    if (callback) callback(newListing);
+    if (callback) console.log(newListing);
 
 //);
 } catch (e){
