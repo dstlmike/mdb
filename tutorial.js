@@ -48,7 +48,7 @@ try {
 }
 }
 
-async function connectMain(client, newListing, callback) {
+async function connectMain(client, newListing) {
   var newListing = {
 
   name: newListing.name,
@@ -58,11 +58,12 @@ async function connectMain(client, newListing, callback) {
 }
 
   var result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
-  if (callback) callback(newListing);
+ if (newListing){ //
+// callback(newListing);
   console.log(result, newListing);
 
 }
-
+}
 connect().catch(console.err);
 //main().catch(console.err);
 
