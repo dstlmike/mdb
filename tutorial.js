@@ -47,7 +47,7 @@ try {
 }
 }
 
-async function connectMain(client, newListing) {
+async function connectMain(client, newListing, callback) {
   var newListing = {
 
   name: newListing.name,
@@ -57,7 +57,7 @@ async function connectMain(client, newListing) {
 }
 
   var result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
-  //if (callback) callback(newListing);
+  if (callback) callback(newListing);
   console.log(result, newListing);
 
 }
