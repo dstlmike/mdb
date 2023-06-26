@@ -8,7 +8,7 @@ try {
   await client.connect(callback);
   //await listDatabases(client);
   await createListing(
-    client, newListing
+    client,
       {
     name: "Lovely Loft",
     summary: "A charming loft in Paris",
