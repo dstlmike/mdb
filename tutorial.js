@@ -5,16 +5,17 @@ async function main (){
   var uri = "mongodb+srv://user2:user2@cluster10.hneglt3.mongodb.net/test?retryWrites=true&w=majority";
 var client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 try {
-  await client.connect();
+  await client.connect(callback);
   //await listDatabases(client);
   await createListing(
-    client,
+    client, newListing
       {
     name: "Lovely Loft",
     summary: "A charming loft in Paris",
     bedrooms: 1,
     bathrooms: 1
   }
+    if (callback) callback(newListing);
 
 );
 } catch (e){
